@@ -25,7 +25,8 @@ namespace exercise.wwwapi.Repository
         public Product DeleteProduct(int id)
         {
             var product = GetProductById(id);
-           _db.products.Remove(product);
+            _db.products.Remove(product);
+            _db.SaveChanges();
             return product;
         }
 
